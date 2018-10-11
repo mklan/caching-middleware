@@ -1,9 +1,9 @@
-# cache-middleware
+# caching-middleware
 redis cache middleware for expressesk backends
 
 ## Install
 
-`npm install cache-middleware --save`
+`npm install caching-middleware --save`
 
 ## Usage
 
@@ -13,7 +13,7 @@ method will be executed, where you can ideally refresh your cache. On the next r
 
 
 ```javascript
-  const { createCache, createCacheMiddleware } = require('cache-middleware');
+  const { createCache, createCacheMiddleware } = require('caching-middleware');
   
   const host = 'localhost';
   const port = 6379;

@@ -1,5 +1,5 @@
 {
-  "name": "cache-middleware",
+  "name": "caching-middleware",
   "version": "1.0.0",
   "description": "redis cache middleware for expressesk backends",
   "main": "dist/index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mklan/cache-middleware.git"
+    "url": "git+https://github.com/mklan/caching-middleware.git"
   },
   "keywords": [
     "cache",
@@ -20,14 +20,13 @@
   ],
   "author": {
     "name": "Matthias Klan",
-    "email": "matthias.klan@gmail.com",
-    "url": "https://klanm.at"
+    "email": "matthias.klan@gmail.com"
   },
   "bugs": {
-    "url": "https://github.com/mklan/cache-middleware/issues"
+    "url": "https://github.com/mklan/caching-middleware/issues"
   },
   "license": "GNU GPLv3",
-  "homepage": "https://github.com/mklan/cache-middleware#readme",
+  "homepage": "https://github.com/mklan/caching-middleware#readme",
   "peerDependencies": {
     "redis": "^2.8.0"
   },
