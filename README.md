@@ -30,7 +30,7 @@ method will be executed, where you can ideally refresh your cache. On the next r
     // ideally you want to query your database at this point
     fallback: userId => User.findOneById(userId),
     // method to update the cache, if the data is only available in the fallback strategy
-    update: userId => cache.setObj(userId),
+    update: (userId, user) => cache.setObj(userId, user),
   });
   
   app.use(cacheMiddleware);
