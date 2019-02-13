@@ -7,17 +7,11 @@ const get = (p, o) =>
     (xs && xs[x]) ? xs[x] : null, o);
 
 
-
-const createCacheMiddleware = ({ keyPath, primary, fallback, update }) => {
-
-  const cacheMiddleware = async (req, res, next) => {
+const cache = ({ keyPath, primary, fallback, update }) => async (req, res, next) => {
     const key = get(keyPath, req);
     const { result } = await findAndUpdate(key, { primary, fallback, update });
     req.cacheResult = result;
     next();
-  }
-
-  return cacheMiddleware;
 }
 
-module.exports = createCacheMiddleware;
+module.exports = cache;
