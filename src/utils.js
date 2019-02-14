@@ -1,28 +1,24 @@
 const ORIGIN = {
-  PRIMARY: 0,
-  FALLBACK: 1,
+  PRIMARY: 'primary',
+  FALLBACK: 'fallback',
 };
 
-const find = async (key, {primary, fallback}) => {
-  let result = await primary(key);
+const find = async (context, {primary, fallback}) => {
+  let result = await primary(context);
   if(result) return { result, origin: ORIGIN.PRIMARY };
-  result = await fallback(key);
+  result = await fallback(context);
   return { result, origin: ORIGIN.FALLBACK };
 };
 
 
-const findAndUpdate = async (key, {primary, fallback, update}) => {
-  const {result, origin } = await find(key, {primary, fallback});
+const findAndUpdate = async (context, {primary, fallback, update}) => {
+  const {result, origin } = await find(context, {primary, fallback});
 
-  if (origin !== ORIGIN.PRIMARY && result) {
-    update(key, result);
+  if (result && origin === ORIGIN.FALLBACK) {
+    update(result, context);
   }
 
   return { result, origin };
-};
+}
 
-
-module.exports = {
-  find,
-  findAndUpdate
-};
+module.exports = findAndUpdate;
