@@ -1,9 +1,11 @@
 # caching-middleware
-cache middleware for expressesk backends
+caching middleware for expressesk backends
 
 ## Install
 
 `npm install caching-middleware --save`
+
+See [migration](https://github.com/mklan/caching-middleware/wiki/Migration-Guide-1.00----2.00) guide due to breaking changes from v1 to v2
 
 ## Usage
 
