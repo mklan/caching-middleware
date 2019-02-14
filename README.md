@@ -39,6 +39,10 @@ method will be executed, where you can ideally rehydrate your cache. On the next
 You can for example retrieve further information about the requester (user), without targeting the database on each
 request all over again. 
 
-## Tests
+## Example App
 
-`npm run test`
+```
+cd examples
+npm install
+./run.sh or npm start
+```
