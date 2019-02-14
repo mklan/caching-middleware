@@ -14,6 +14,8 @@ method will be executed, where you can ideally rehydrate your cache. On the next
 
 ```javascript
   const cache = require('caching-middleware');
+  //const db = ...
+  //const memCache = ...
   
   const app = express();
 

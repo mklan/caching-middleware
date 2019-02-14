@@ -11,15 +11,12 @@ const mockDb = createStore({
 const app = express();
 
 const withUser = cache({
-  // context will be passed into primary, fallback and update
-  context: req => ({ userId: req.params.id }), //req.tokenObj.userId
-  // method to retrieve data using the defined key
+  resultKey: 'user',
+  context: req => ({ userId: req.params.id }),
   primary: ctx => mockCache.get(ctx.userId),
-  // look for 
   fallback: ctx => mockDb.get(ctx.userId),
   // rehydrate cache
   update: (result, ctx) => mockCache.set(ctx.userId, { ...result, origin: 'cache' }),
-  resultKey: 'user',
 });
 
 app.get('/user/:id', withUser, (req, res) => {
