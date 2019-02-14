@@ -1,5 +1,5 @@
 import express from 'express';
-import cache from '../src';
+import cache from '../lib';
 import createStore from './store';
 
 const mockCache = createStore();

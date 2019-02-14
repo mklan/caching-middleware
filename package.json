@@ -2,7 +2,10 @@
   "name": "caching-middleware",
   "version": "2.0.0",
   "description": "caching middleware for expressesk backends",
-  "main": "src/index.js",
+  "main": "lib/index.js",
+  "files": [
+    "/lib"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mklan/caching-middleware.git"
