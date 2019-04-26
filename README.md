@@ -41,6 +41,13 @@ method will be executed, where you can ideally rehydrate your cache. On the next
 You can for example retrieve further information about the requester (user), without targeting the database on each
 request all over again. 
 
+## Tests
+
+```
+npm install
+npm test
+```
+
 ## Example App
 
 ```

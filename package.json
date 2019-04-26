@@ -1,8 +1,11 @@
 {
   "name": "caching-middleware",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "caching middleware for expressesk backends",
   "main": "lib/index.js",
+  "scripts": {
+    "test": "jest"
+  },
   "files": [
     "/lib"
   ],
@@ -24,5 +27,8 @@
     "url": "https://github.com/mklan/caching-middleware/issues"
   },
   "license": "GNU GPLv3",
-  "homepage": "https://github.com/mklan/caching-middleware#readme"
+  "homepage": "https://github.com/mklan/caching-middleware#readme",
+  "devDependencies": {
+    "jest": "^24.7.1"
+  }
 }
