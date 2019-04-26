@@ -44,7 +44,7 @@ request all over again.
 ## Example App
 
 ```
-cd examples
+cd example
 npm install
 ./run.sh or npm start
 ```
