@@ -22,17 +22,18 @@ method will be executed, where you can ideally rehydrate your cache. On the next
   const app = express();
 
   const withUser = cache({
-      context: req => ({ userId: req.params.id }),
-      resultKey: 'user',
-      primary: ctx => memCache.get(ctx.userId),
-      fallback: ctx => db.user.findById(ctx.userId),
-      // rehydrate cache
-      update: (result, ctx) => memCache.set(ctx.userId, result),
-    });
+    // returned value will be passed into callback functions
+    context: req => ({ userId: req.params.id }),
+    resultKey: 'user', //defaults to cacheResult
+    primary: ctx => memCache.get(ctx.userId),
+    fallback: ctx => db.user.findById(ctx.userId),
+    // rehydrate cache
+    update: (result, ctx) => memCache.set(ctx.userId, result),
+  });
 
-    app.get('/user/:id', withUser, (req, res) => {
-      res.send(req.user); // req[resultKey]
-    });
+  app.get('/user/:id', withUser, (req, res) => {
+    res.send(req.user); // req[resultKey]
+  });
   
 ```
 
